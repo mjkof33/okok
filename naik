@@ -1,0 +1,24 @@
+<?php
+// URL sumber
+$url = "https://raw.githubusercontent.com/mjkof33/okok/refs/heads/main/siap.txt";
+
+// Nama file tujuan
+$outputFile = "jadi.txt";
+
+// Mengambil konten dari URL
+$content = file_get_contents($url);
+
+// Memeriksa apakah pengambilan berhasil
+if ($content === false) {
+    echo "Gagal mengambil konten dari URL.";
+} else {
+    // Menyimpan konten ke file
+    $result = file_put_contents($outputFile, $content);
+
+    if ($result === false) {
+        echo "Gagal menyimpan konten ke file.";
+    } else {
+        echo "Konten berhasil disimpan ke file $outputFile.";
+    }
+}
+?>
